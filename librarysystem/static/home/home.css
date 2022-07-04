@@ -1,0 +1,26 @@
+img {
+    width: 30%;
+    height: 45%;
+    align-items: center;
+}
+
+.card {
+    width: 33%;
+    height: 25%;
+    display: flex;
+    flex: left;
+    flex-direction: row;
+    margin: 1%;
+    padding: 1%;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+
+.read {
+    display: flex;
+    justify-content: space-between;
+}
