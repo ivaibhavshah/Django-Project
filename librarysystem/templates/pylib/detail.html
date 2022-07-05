@@ -1,0 +1,13 @@
+{% extends 'pylib/base.html'%}
+{% load static %}
+{% block title %}{{book.name}}{% endblock %}
+{% block css %}{% static 'home/home.css' %}{% endblock %}
+{% block content %}
+<div>
+    <span class= "span-img"><img src ="{{book.image.url}}"></span>
+<div><strong>{{book.name}}</strong></div>
+<div>{{book.author}}</div>
+<div><p><small>{{book.summary}}</small></p></div>
+<p>Remaining Quantity : {{book.quantity}}</p>
+<button><a href="">Book for issue</button>
+{% endblock %}
