@@ -1,0 +1,5 @@
+Extensions installed
+
+django_extensions - > Features like shellplus
+django_crispy_forms - > font in forms
+pillow -> for image field in models
