@@ -1,11 +1,5 @@
-@media only screen and (min-width 769px) {}
-
-img {
-    width: 30%;
-    height: 45%;
-    align-items: center;
+@media only screen and (min-width: 769px) {
     .card {
-        width: 33%;
         height: 25%;
         display: flex;
         margin: left;
@@ -14,10 +8,17 @@ img {
         padding: 1%;
     }
     .body {
-        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
         flex-direction: row;
         margin: 1%;
     }
+}
+
+img {
+    width: 30%;
+    height: 45%;
+    align-items: center;
 }
 
 .read {
@@ -38,6 +39,10 @@ img {
 }
 
 .span-img {
-    width: 25%;
-    height: 30%;
+    width: auto;
+    height: 40%;
+}
+
+.text-end {
+    padding-left: 1rem;
 }
