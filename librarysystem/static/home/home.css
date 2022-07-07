@@ -37,3 +37,14 @@ img {
         margin: 1% 1% 1% 1%;
     }
 }
+
+.text-end {
+    padding-left: 1rem;
+}
+
+.imgpreview {
+    display: flex;
+    justify-content: space-evenly;
+    width: 35%;
+    height: 40%;
+}
