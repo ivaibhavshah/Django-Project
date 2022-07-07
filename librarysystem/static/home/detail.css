@@ -1,0 +1,8 @@
+.imgpreview {
+    display: flex;
+    justify-content: space-evenly;
+    width: 35%;
+    height: 40%;
+}
+
+.detail {}
