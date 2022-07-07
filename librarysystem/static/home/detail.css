@@ -1,8 +1,16 @@
-.imgpreview {
-    display: flex;
-    justify-content: space-evenly;
-    width: 35%;
-    height: 40%;
+img {
+    width: 20%;
+    height: 30%;
 }
 
-.detail {}
+.image {
+    display: contents;
+}
+
+.text-end {
+    padding-left: 1rem;
+}
+
+main {
+    display: flex;
+}

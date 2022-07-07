@@ -19,8 +19,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home'%}">PyLIB</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -35,20 +35,25 @@
                     </li> -->
 
                 </ul>
+                
                 <div class="px-3 py-2  mb-2">
                     <div class="container d-flex flex-wrap justify-content-center">
                         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
                             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                         </form>
-
-                        <div class="text-end">
-                            <button type="button" class="btn btn-light text-dark me-2">Login</button>
-                            <button type="button" class="btn btn-primary">Sign-up</button>
-                        </div>
+                        {% if user.is_authenticated %}
+                            <div class="text-end">
+                                <a href="{% url 'logout'%}"><button type="button" class="btn btn-light text-dark me-2 ms-2">logout</button></a>
+                            </div>
+                        {% else %}
+                            <div class="text-end">
+                                <a href="{% url 'login'%}"><button type="button" class="btn btn-light text-dark me-2 ms-2">Login</button>
+                                <a href="{% url 'signup'%}"><button type="button" class="btn btn-primary">Sign-up</button></a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-
         </div>
     </nav>
 
