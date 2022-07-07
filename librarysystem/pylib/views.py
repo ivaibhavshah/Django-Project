@@ -11,5 +11,5 @@ def detail(request,book_isbn):
     book = Book.objects.get(isbn = book_isbn)
     return render(request,'pylib/detail.html',{"book":book})
 
-def aboutus(request):
-    return render(request,'pylib/aboutus.html')
+def contactus(request):
+    return render(request,'pylib/contactus.html')

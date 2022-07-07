@@ -1,0 +1,40 @@
+.title {
+    margin: 2rem;
+    background-color: grey;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    margin-bottom: 5.5%;
+}
+
+.address,
+.mail,
+.call {
+    width: auto;
+    margin: 0.5%;
+    background-color: wheat;
+    padding: 8rem;
+    border-radius: 2%;
+}
+
+
+/* Mobile view to be adjust */
+
+@media screen and (max-width:500px) {
+    .address,
+    .mail,
+    .call {
+        margin: 1%;
+        background-color: wheat;
+        border-radius: 2%;
+    }
+    .main {
+        width: 99%;
+    }
+}

@@ -7,7 +7,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('',views.home,name='home'),
     path('book/<book_isbn>',views.detail,name='detail'),
-    path('aboutus',views.aboutus,name='aboutus')
+    path('contactus',views.contactus,name='contactus')
 ]
 
 #to load image
