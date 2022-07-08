@@ -8,5 +8,5 @@
         <p><small>{{book.summary}}</small></p>
     </div>
     <!-- <p>Remaining Quantity : {{book.quantity}}</p> -->
-    <div><a href=""><center><button class = "btn btn-primary mt-5 col-3 align ">Book for issue</button></center></a>
-        <div><a href="{% url 'home' %}"><center><button class = "btn btn-secondary mt-3 col-3 align ">Back To Homepage</button></center></a> </span> {% endblock %}
+    <div><a href="{% url 'download' books.isbn %}"><center><button class = "btn btn-primary mt-5 col-3 align ">Download PDF</button></center></a>
+        <div><a href="{% url 'books' %}"><center><button class = "btn btn-secondary mt-3 col-3 align ">Back To Homepage</button></center></a> </span> {% endblock %}

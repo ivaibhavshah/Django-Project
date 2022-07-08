@@ -1,0 +1,20 @@
+{% extends 'pylib/base.html'%} {% load static %} {% block title %}Download in processing..{% endblock %} {% block content %}
+
+<div class="main">
+    <div class="heading">
+        <h2>
+            Download has been started
+        </h2>
+    </div>
+    <div>
+        <h5>If not, Press here :
+            <a href="{% url 'download' book.isbn %]">Download again</a>
+        </h5>
+    </div>
+    <div>
+        Thank you for using our webpage.
+    </div>
+
+
+</div>
+{% endblock%}

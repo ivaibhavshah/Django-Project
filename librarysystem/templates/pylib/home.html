@@ -1,28 +1,13 @@
-{% extends 'pylib/base.html' %} {% load static %} {% block title %} Homepage {% endblock %} {% block css %}{% static 'home/home.css' %}{% endblock %} {% block content %}
-<div class='body'>
-    {% for book in books %}
-    <div class="card">
-        <img class="card-image rounded mx-auto d-flex " src="{{book.image.url}}" alt="{{book.name}}" />
-        <div class="card-body">
-            <h5 class="card-title">{{book.name}} by {{book.author}}</h5>
-            {% comment %}
-            <p class="card-text">.</p> {% endcomment %}
-            <div>
-                <p class="card-text">Category : {{book.category}}</p>
-            </div>
-            {% comment %}
-            <p class="card-text">Quantity : {{book.quantity}}</p> {% endcomment %}
-        </div>
-
-        <div class='read'><button class="btn btn-dark"><a class="link-light" href = "{% url 'detail' book.isbn %}"> More Info </a>
-          {% comment %} <button  class="btn btn-dark "><a class="link-light" href = ""> Book </a> {% endcomment %}
-        </div>
-        
-      </div>
-  {% empty %}
-    No Books Available at the moment
-  {% endfor %}
-  </div>
-
-
+{% extends 'pylib/base.html' %}
+{% block title %}Hello User {% endblock %}
+{% block css %}{% endblock %}
+{% block content %}
+<div class= "main">
+    <div>
+    <h2>Welcome to Pylib</h2>
+    </div>
+    <div>
+        <a name="" id="" class="btn btn-primary" href="{%url 'books' %}" role="button">Book in library</a>
+    </div>
+</div>
 {% endblock %}

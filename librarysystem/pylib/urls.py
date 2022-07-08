@@ -1,13 +1,17 @@
 from django.urls import path
-from . import views
+from . import views , views_download
 
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('',views.home,name='home'),
+    path('books',views.books,name='books'),
     path('book/<book_isbn>',views.detail,name='detail'),
-    path('contactus',views.contactus,name='contactus')
+    path('contactus',views.contactus,name='contactus'),
+    path('download/<book_isbn>',views_download.download_file,name='download'),
+    path('books/adddata',views.adddata,name='adddata'),
+    
 ]
 
 #to load image
