@@ -25,7 +25,11 @@ def adddata(request):
     submitted = False
     form = AddDataForm()  
     if request.method =="POST":
-        form = InputDataForm(request.POST)
+        form = AddDataForm(request.POST)
+        if form.is_valid():
+            form.save()
+            submitted = True
+        return render(request,'pylib/adddata.html',{ "form":form,"submitted":submitted})
     else:
         submitted = False
         return render(request,'pylib/adddata.html',{"form":form , "submitted" : submitted})
