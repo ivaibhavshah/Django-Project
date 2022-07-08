@@ -7,7 +7,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200, blank=True)
     summary = models.CharField(max_length=1000, blank=True)
     category = models.CharField(max_length=200,blank = True)
-    image = models.ImageField(blank=True,upload_to='book_images')
-    file = models.FileField(null=True,upload_to="bookpdf")
+    image = models.ImageField(upload_to='book_images')
+    file = models.FileField(null=True,upload_to="bookpdf",blank=True)
     def __str__(self):
-        return f"ISBN : {self.isbn}, Name : {self.name}, Author : {self.author}, Summary : {self.summary}, Image : {self.image}"
+        return f"ISBN : {self.isbn}, Name : {self.name}, Author : {self.author}, Summary : {self.summary}, Image : {self.image},file : {self.file}"

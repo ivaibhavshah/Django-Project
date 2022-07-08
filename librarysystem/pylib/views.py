@@ -25,7 +25,9 @@ def adddata(request):
     submitted = False
     form = AddDataForm()  
     if request.method =="POST":
-        form = AddDataForm(request.POST)
+        form = AddDataForm(request.POST,request.FILES)
+        
+       
         if form.is_valid():
             form.save()
             submitted = True
