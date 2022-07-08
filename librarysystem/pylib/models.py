@@ -10,4 +10,4 @@ class Book(models.Model):
     image = models.ImageField(blank=True,upload_to='book_images')
     file = models.FileField(null=True,upload_to="bookpdf")
     def __str__(self):
-        return f"ISBN : {self.isbn}, Name : {self.name}, Author : {self.author}, Summary : {self.summary}, Image : {self.image}, Quantity : {self.quantity}"
+        return f"ISBN : {self.isbn}, Name : {self.name}, Author : {self.author}, Summary : {self.summary}, Image : {self.image}"
