@@ -1,0 +1,16 @@
+.box {
+    width: 25%;
+    height: 50%;
+    border: solid;
+    border-radius: 2%;
+    vertical-align: middle;
+    margin-top: 15%;
+    padding: 20px;
+    /* margin: 50px; */
+    /* padding-bottom: 50px; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}

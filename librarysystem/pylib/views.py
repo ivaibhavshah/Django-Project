@@ -52,3 +52,8 @@ def adddata(request):
         submitted = False
         return render(request,'pylib/adddata.html',{"form":form , "submitted" : submitted})
 
+
+#my profile tab
+
+def myprofile(request):
+    pass
