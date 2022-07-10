@@ -1,12 +1,11 @@
-{% extends 'pylib/base.html' %} {% load static %} {% block title %}Adding new book to pylib{% endblock %} 
-{% load crispy_forms_tags %} {% block content%}
+{% extends 'pylib/base.html' %} {% load static %} {% block title %}Adding new book to pylib{% endblock %} {% load crispy_forms_tags %} {% block content%}
 <div class=" main">
     {% if submitted %}
     <p>Your Form is Submitted !!</p>
     {% else %}
-    <form action="" method="post">
+    <form entype="multipart/form-data" action="" method="post">
 
-        {{message}} {% csrf_token %} {{form|crispy}}
+        {% csrf_token %} {{form|crispy}}
 
         <div class="mb-3">
             <label for="" class="form-label"></label>

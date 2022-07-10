@@ -32,9 +32,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contactus'%}">Contact Us</a>
                     </li>
+                    {% if user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'adddata'%}">Add Book</a>
                     </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="nav-link" href="">Delete Book</a> {% endcomment %}
+                    </li>
+                    {% endif %}
 
 
                 </ul>
@@ -42,142 +47,25 @@
                 <div class="px-3 py-2  mb-2">
                     <div class="container d-flex justify-content-center ">
                         <div>
-                            <form class="col-10 col-lg-auto mb-2 d-flex mb-lg-0 me-lg-auto" role="search">
+                            <form class="col-10 col-lg-auto mb-2  d-flex mb-lg-0 me-lg-auto" role="search">
                                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                                 <input type="submit" class="btn btn-light ms-2 " id="search-button" value="Search">
                             </form>
                         </div>
                         {% if user.is_authenticated %}
                         <div class="text-end">
-                            <a href="#"><button type="button" class="btn btn-blue text-light">my Profile </button></a>
+                            <a href="#"><button type="button" class="btn btn-blue text-light ms-2">my Profile </button></a>
                             <a href="{% url 'logout'%}"><button type="button" class="btn btn-light text-dark me-2 ms-2">logout</button></a>
                         </div>
                         {% else %}
                         <div class="text-end">
-                            <!-- Button login trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#LoginFormModal">
+                            <!-- Button login  --><a href="{% url 'login' %}"
+                            <button type="button" class="btn btn-primary ms-2" >
                                 Login
-                            </button>
-
-                            <!-- Login Modal -->
-                            <div class="modal fade" id="LoginFormModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="LoginFormLabel">Login Here, Enter Credentials</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Login Form -->
-                                            <form action="{% url 'login' %}" method='post'>
-                                                <!-- email field -->
-                                                <div class="row mb-3">
-                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="email" class="form-control" id="inputEmail3">
-                                                    </div>
-                                                </div>
-                                                <!-- password -->
-                                                <div class="row mb-3">
-                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password" class="form-control" id="inputPassword3">
-                                                    </div>
-                                                </div>
-                                                <!-- department -->
-                                                <!-- <fieldset class="row mb-3">
-                                                    <legend class="col-form-label col-sm-2 pt-0">Department</legend>
-                                                    <div class="col-sm-10 d-inline-flex">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input ms-1" type="radio" name="department" id="gridRadios1" value="option1" checked>
-                                                            <label class="form-check-label" for="gridRadios1">Librarian</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input ms-1" type="radio" name="department" id="gridRadios2" value="option2">
-                                                            <label class="form-check-label" for="gridRadios2 ">Student</label>
-                                                        </div>
-                                                    </div> -->
-
-                                                </fieldset>
-
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer ">
-                                            <button type="button " class="btn btn-secondary " data-bs-dismiss="modal ">Cancel</button>
-                                            <button type="submit " class="btn btn-primary ">Login</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Button Signup trigger modal -->
-
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SignUpFormModal">Sign Up</button>
-
-                            <!--Signup  Modal -->
-                            <div class="modal fade" id="SignUpFormModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="signUpFormModalLabel">Welcome, Connect with us here</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- form -->
-                                            <form action="{% url 'signup' %}" method='post'>
-                                                <!-- email field -->
-                                                <div class="row mb-3">
-                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="email" class="form-control" id="inputEmail3" name="email">
-                                                    </div>
-                                                </div>
-                                                <!-- username field -->
-                                                <div class="row mb-3">
-                                                    <label for="inputusername" class="col-sm-2 col-form-label">Username</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="inputusername" name="username">
-                                                    </div>
-                                                </div>
-                                                <!-- password -->
-                                                <div class="row mb-3">
-                                                    <label for="inputPassword1" class="col-sm-2 col-form-label">Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password" class="form-control" id="inputPassword1" name="pass1">
-                                                    </div>
-                                                </div>
-                                                <!-- Confirm password -->
-                                                <div class="row mb-3">
-                                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Confirm Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password" class="form-control" id="inputPassword2" name="pass2">
-                                                    </div>
-                                                </div>
-                                                <!-- department -->
-                                                <!-- <fieldset class="row mb-3">
-                                                    <legend class="col-form-label col-sm-2 pt-0">Department</legend>
-                                                    <div class="col-sm-10 d-inline-flex">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input ms-1" type="radio" name="department" id="gridRadios1" value="option1" checked>
-                                                            <label class="form-check-label" for="gridRadios1"> Librarian</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input ms-1" type="radio" name="department" id="gridRadios2" value="option2">
-                                                            <label class="form-check-label" for="gridRadios2 "> Student</label>
-                                                        </div>
-                                                    </div>
-                                                </fieldset> -->
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer justify-content-around">
-                                            <div>Already have an account ?<button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#LoginFormModal">Login</button>
-                                                <button type="button" class="btn btn-primary">Signup</button>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </button></a>
+                            <!-- Button Signup -->
+                            <a href="{% url 'signup' %}"
+                            <button type="button" class="btn btn-primary" >Sign Up</button></a>
                             {% endif %}
                         </div>
                     </div>
