@@ -37,6 +37,14 @@ def adddata(request):
         form = AddDataForm(request.POST, request.FILES)
 
         if form.is_valid(): 
+            data = Book()
+            data.isbn = form.cleaned_data["isbn"]
+            data.name = form.cleaned_data["name"]
+            data.author = form.cleaned_data["author"]
+            data.summary = form.cleaned_data["summary"]
+            data.category = form.cleaned_data["category"]
+            data.image = form.cleaned_data["image"]
+            data.file = form.cleaned_data["file"]
             form.save()
             submitted = True
         return render(request,'pylib/adddata.html',{ "form":form,"submitted":submitted})
