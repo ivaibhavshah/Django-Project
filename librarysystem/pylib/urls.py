@@ -11,7 +11,7 @@ urlpatterns = [
     path('contactus',views.contactus,name='contactus'),
     path('download/<book_isbn>',views_download.download_file,name='download'),
     path('books/adddata',views.adddata,name='adddata'),
-    path('myprofile',views.myprofile,name="myprofile")
+    
 ]
 
 #to load image

@@ -36,7 +36,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'adddata'%}">Add Book</a>
                     </li>
-                    {% comment %} <li class="nav-item">
+                    {% comment %}
+                    <li class="nav-item">
                         <a class="nav-link" href="">Delete Book</a> {% endcomment %}
                     </li>
                     {% endif %}
@@ -54,19 +55,16 @@
                         </div>
                         {% if user.is_authenticated %}
                         <div class="text-end">
-                            <a href="#"><button type="button" class="btn btn-blue text-light ms-2">my Profile </button></a>
+                            <a href="{% url 'myprofile'%}"><button type="button" class="btn btn-blue text-light ms-2">my Profile </button></a>
                             <a href="{% url 'logout'%}"><button type="button" class="btn btn-light text-dark me-2 ms-2">logout</button></a>
                         </div>
                         {% else %}
                         <div class="text-end">
-                            <!-- Button login  --><a href="{% url 'login' %}"
-                            <button type="button" class="btn btn-primary ms-2" >
+                            <!-- Button login  --><a href="{% url 'login' %}" <button type="button" class="btn btn-primary ms-2">
                                 Login
                             </button></a>
                             <!-- Button Signup -->
-                            <a href="{% url 'signup' %}"
-                            <button type="button" class="btn btn-primary" >Sign Up</button></a>
-                            {% endif %}
+                            <a href="{% url 'signup' %}" <button type="button" class="btn btn-primary">Sign Up</button></a> {% endif %}
                         </div>
                     </div>
                 </div>

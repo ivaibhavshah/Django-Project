@@ -1,11 +1,12 @@
+from audioop import reverse
 from django.contrib.auth.models import User
-
+from django.urls import reverse_lazy
+from django.core.files.storage import FileSystemStorage
 from .forms import AddDataForm
 from urllib import request
 from django.shortcuts import render, redirect
 from .models import Book
-
-from django.views.generic import DetailView
+from django.conf import settings
 # Create your views here.
 # To render home page
 def home(request):
@@ -34,6 +35,13 @@ def adddata(request):
     submitted = False
     form = AddDataForm()  
     if request.method =="POST":
+      
+        
+        # myfile =request.FILES["myfile"]
+        # fs = FileSystemStorage()
+        
+        # fs.save(myfile.name, myfile)
+        
         form = AddDataForm(request.POST, request.FILES)
 
         if form.is_valid(): 
@@ -55,5 +63,3 @@ def adddata(request):
 
 #my profile tab
 
-def myprofile(request):
-    pass
