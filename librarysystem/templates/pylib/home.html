@@ -1,13 +1,22 @@
-{% extends 'pylib/base.html' %}
-{% block title %}Hello User {% endblock %}
-{% block css %}{% endblock %}
-{% block content %}
-<div class= "main">
-    <div>
-    <h2>Welcome to Pylib</h2>
+{% extends 'pylib/base.html' %} {% load static %} {% block title %}Hello User {% endblock %} {% block css %}{% static 'home/page.css' %}{% endblock %} {% block content %}
+<div class="main">
+
+    <div class="heading ">
+        <h1>Welcome to Pylib</h1>
     </div>
-    <div>
-        <a name="" id="" class="btn btn-primary" href="{%url 'books' %}" role="button">Book in library</a>
+    <div class="body">
+        <h5>
+            <p>Hello User, this website was created for making available books to all and can be readen by all. The technology used in making this website is known Django framework</p>
+            <br>
+            <p>Let's get start with Viewing books in our library.</p>
+        </h5>
+
+    </div>
+
+
+    <div class="button">
+        <a name="row" id="" class="btn btn-success" href="{%url 'books' %}" role="button">Book in library</a>
     </div>
 </div>
+
 {% endblock %}

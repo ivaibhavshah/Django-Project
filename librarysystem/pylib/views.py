@@ -8,9 +8,11 @@ from django.shortcuts import render, redirect
 from .models import Book
 from django.conf import settings
 # Create your views here.
+
 # To render home page
 def home(request):
     return render(request,'pylib/home.html')
+
 # to show all books
 def books(request):
     
@@ -61,5 +63,11 @@ def adddata(request):
         return render(request,'pylib/adddata.html',{"form":form , "submitted" : submitted})
 
 
-#my profile tab
 
+#searching book
+def searchbooks(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        books = Book.objects.filter(name__contains=searched)
+        return render(request,'pylib/search_book.html',{"searched":searched,"books":books})        
+    return render(request,'pylib/search_book.html')

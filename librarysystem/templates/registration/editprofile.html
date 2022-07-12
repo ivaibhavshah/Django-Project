@@ -1,6 +1,34 @@
-{% extends 'registration/acc_base.html' %} {% block content %}
+{% extends 'pylib/base.html' %} {% load static %} {% block title %}Editing Profile..{% endblock %} {% block css %}{% static 'home/edit.css' %}{% endblock css %} {% block content %}
+
 <form action="" method="post">
-    {% csrf_token %} {{form.as_p}}
-    <button type="submit" class="btn btn-primary">update </button>
+    {% csrf_token %}
+    <div class="main">
+        <div>
+            <h3 class="heading">Edit Profile Page ..</h3>
+        </div>
+        <br>
+        <h6>Prefer not to change username & email add**</h6>
+        <div class="input-group mb-3">
+
+            <span class="input-group-text" id="basic-addon1">@</span> {{form.username}}
+
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Email</span> {{form.email}}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">First Name</span> {{form.first_name}}
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Last Name</span> {{form.last_name}}
+        </div>
+
+        <a href="{% url 'changepass' %}">
+            <button type="button" class="submit btn btn-gray"> Change Password </button></a>
+        <button type="submit" class="submit btn btn-dark">Update Profile </button>
+
+    </div>
+
 </form>
 {% endblock content %}

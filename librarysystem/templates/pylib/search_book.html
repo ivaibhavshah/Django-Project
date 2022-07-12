@@ -1,0 +1,39 @@
+{% extends 'pylib/base.html' %} {% load static %}{% block title %}Hello User {% endblock %} {% block css %}{% static 'home/home.css' %}{% endblock %} {% block content %}
+<div class="main">
+    <div>
+
+        {% if searched %}
+        <div class="d-flex justify-content-center">
+            <h3>You Searched for {{searched}}</h3>
+        </div>
+        <div class='body'>
+            {% for book in books %}
+            <div class="card">
+                <img class="card-image rounded mx-auto d-flex " src="{{book.image.url}}" alt="{{book.name}}" />
+                <div class="card-body">
+                    <h5 class="card-title">{{book.name}} by {{book.author}}</h5>
+                    {% comment %}
+                    <p class="card-text">.</p> {% endcomment %}
+                    <div>
+                        <p class="card-text">Category : {{book.category}}</p>
+                    </div>
+                    {% comment %}
+                    <p class="card-text">Quantity : {{book.quantity}}</p> {% endcomment %}
+                </div>
+
+                <div class='read'><button class="btn btn-dark"><a class="link-light" href = "{% url 'detail' book.isbn %}"> More Info </a>
+                  <button  class="btn btn-dark mt-1"><a class="link-light" href = "{%url 'download' book.isbn %}"> Download PDF </a> 
+                </div>
+                
+              </div>
+          {% empty %}
+            No Books Available at the moment
+          {% endfor %}
+          </div>
+        
+        {% else %}
+        <h3>You Forgot to enter book name....</h3>
+        {% endif%}
+    </div>
+</div>
+{% endblock %}

@@ -20,7 +20,8 @@ class RegisterForm(UserCreationForm):
         return user
 
 class EditProfileForm(UserChangeForm):
-    email = forms.EmailField(label = "Email",widget=forms.TextInput(attrs=  {'class':'form-control'}))
+    #<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value=""> {{form.username}}
+    email = forms.EmailField(label = "Email",widget=forms.TextInput(attrs=  {'class':'form-control','placeholder':'Username','aria-label':'Username','aria-describedby':'basic-addon1'}))
     first_name = forms.CharField(label = "First name",widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(label = "Last name",widget=forms.TextInput(attrs={'class':'form-control'}))
 

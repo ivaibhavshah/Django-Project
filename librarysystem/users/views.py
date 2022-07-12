@@ -1,10 +1,26 @@
 from django.shortcuts import render
 from .forms import RegisterForm, EditProfileForm
-from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import UserChangeForm ,PasswordChangeForm , PasswordResetForm
 from django.urls import reverse_lazy
 from django.views import generic
+from django.contrib.auth.views import PasswordChangeView, PasswordResetView
 
 # Create your views here.
+
+#Change Password
+class PasswordChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('home')
+    template_name = 'registration/password_change.html'
+
+
+#Reset Password
+class PasswordResetView(PasswordResetView):
+    form_class = PasswordResetForm
+    success_url = reverse_lazy('home')
+    template_name = 'registration/password_change.html'
+
+ #signup form
 class SignUpView(generic.CreateView):
     form_class = RegisterForm
     success_url = reverse_lazy('login')
