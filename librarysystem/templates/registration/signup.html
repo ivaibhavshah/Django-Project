@@ -1,8 +1,49 @@
-{% extends 'registration/acc_base.html' %} {% block content %}
+{% extends 'registration/acc_base.html' %} {% block title %}Signing Up to Pylib{% endblock %} {% load static %} {% block css %}{% static 'home/edit.css'%}{% endblock%} {% block content %}
 <form action="" method="post">
-    {% csrf_token %} {{form.as_p}}
-    <button type="submit" class="btn btn-primary">SignUp</button> Already Have an account?
-    <a href="{% url 'login' %}">
-        <button type="button" class="btn btn-primary">Login</button></a>
-</form>
-{% endblock content %}
+    {% csrf_token %}
+
+    <div class="main">
+        <div>
+            <h3 class="heading">Welcome to Our site ....</h3>
+        </div>
+
+        <!-- <div class="input-group mb-3 ">
+
+            <span class="input-group-text" id="basic-addon1">@</span> {{form.username}}
+
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Email</span> {{form.email}}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">First Name</span> {{form.first_name}}
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Last Name</span> {{form.last_name}}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Enter Password</span> {{form.password1}}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Confirm Password</span> {{form.password2}}
+        </div>
+        <div>
+            <ul>
+                <li>Your password can’t be too similar to your other personal information.</li>
+                <li>Your password must contain at least 8 characters.</li>
+                <li>Your password can’t be a commonly used password.</li>
+                <li>Your password can’t be entirely numeric.</li>
+            </ul>
+        </div>
+       -->
+
+        {{form}}
+        <br>
+        <button type="submit" class="btn btn-primary">SignUp</button><br>
+        <div class="d-flex ">
+            <p> Already Have an account? </p>
+            <a href="{% url 'login' %}">
+                <button type="button" class="btn btn-primary ms-3">Login</button></a>
+        </div><br>
+</form> {% endblock content %}
