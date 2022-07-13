@@ -1,7 +1,7 @@
 {% extends 'pylib/base.html' %} {% load static %} {% block title %}Editing Profile..{% endblock %} {% block css %}{% static 'home/edit.css' %}{% endblock css %} {% block content %}
 
 <form action="" method="post">
-    {% csrf_token %}
+    {% csrf_token %} {{message}}
     <div class="main">
         <div>
             <h3 class="heading">Edit Profile Page ..</h3>
@@ -26,7 +26,6 @@
 
         <a href="{% url 'changepass' %}" class="password mb-2"> Change Password</a>
         <button type="submit" class="update-button">Update Profile </button>
-
     </div>
 
 </form>

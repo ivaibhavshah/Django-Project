@@ -1,12 +1,31 @@
 {% extends 'pylib/base.html'%} {% load static %} {% block title %}{{book.name}}{% endblock %} {% block css %}{% static 'home/detail.css' %}{% endblock %} {% block content %}
-
-<div class="image "><img class="image-preview" src="{{book.image.url}}"></div>
-<span class="detail m-3">
-    <div><strong><h3>{{book.name}}</h3></strong></div>
-    <div>by <i class="text-decoration-underline" >{{book.author}}</i></div>
-    <div class="text-capitalize lh-base ">
-        <p><small>{{book.summary}}</small></p>
-    </div>
-    <!-- <p>Remaining Quantity : {{book.quantity}}</p> -->
-    <div><a href="{% url 'download' book.isbn %}"><center><button class = "btn btn-primary mt-5 col-3 align ">Download PDF</button></center></a>
-        <div><a href="{% url 'books' %}"><center><button class = "btn btn-secondary mt-3 col-3 align ">Back To Homepage</button></center></a> </span> {% endblock %}
+<div class="main d-flex justify-content-center">
+    <div class="image "><img class="image-preview" src="{{book.image.url}}"></div>
+    <span class="detail m-3">
+        <div><strong><h3>{{book.name}}</h3></strong></div>
+        <div>by <i class="text-decoration-underline" >{{book.author}}</i></div>
+        <div class="text-capitalize lh-base ">
+            <p><small>{{book.summary}}</small></p>
+        </div>
+        <!-- <p>Remaining Quantity : {{book.quantity}}</p> -->
+        <div>
+            <a href="{% url 'download' book.isbn %}">
+                <center>
+                    <button class = "btn btn-primary mt-5 col-3 align ">
+                        Download PDF
+                    </button>
+                </center>
+            </a>
+        </div>
+        <div>
+            <a href="{% url 'books' %}">
+                <center>
+                    <button class = "btn btn-secondary mt-3 col-3 align ">
+                        Back To Homepage
+                    </button>
+                </center>
+            </a> 
+        </div>
+    </span>
+</div>
+{% endblock %}
