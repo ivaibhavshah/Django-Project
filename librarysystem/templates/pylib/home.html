@@ -1,4 +1,7 @@
 {% extends 'pylib/base.html' %} {% load static %} {% block title %}Hello User {% endblock %} {% block css %}{% static 'home/page.css' %}{% endblock %} {% block content %}
+<div>
+    {% if messages %} {% for message in messages %} {{message}} {% endfor %}{% endif %}
+</div>
 <div class="main">
 
     <div class="heading ">

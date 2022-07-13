@@ -1,60 +1,60 @@
 {% extends 'pylib/base.html' %} {% load static %} {% block css %} {% static 'home/add.css'%} {% endblock css %} {% block title %}Adding new book to pylib{% endblock %} {% load crispy_forms_tags %} {% block content%}
-<div class="bod">
-    {% if submitted %}
-    <p>Your Form is Submitted !!</p>
-    {% else %}
-    <div class="main d-flex justify-content-center">
-        <form enctype="multipart/form-data" action="" method="post">
+<div class="body">
 
-            {% csrf_token %}
-            <div>
-                <div class="heading text-light">
-                    <h3>Enter Your Book details</h3>
-                </div>
+    {% for message in messages %} {{message}} {% endfor %}
+</div>
+<div class="main d-flex justify-content-center">
+    <form enctype="multipart/form-data" action="" method="post">
 
-                <div class="row text-light">
-                    <label for="ISBN">
+        {% csrf_token %}
+        <div>
+            <div class="heading text-light">
+                <h3>Enter Your Book details</h3>
+            </div>
+
+            <div class="row text-light">
+                <label for="ISBN">
                     Book ISBN* :
                 </label> {{form.isbn}}
 
-                </div>
-                <br>
-                <div class="row text-light">
-                    <label for="Name">
+            </div>
+            <br>
+            <div class="row text-light">
+                <label for="Name">
                     Book Name* : 
                 </label> {{form.name}}
-                </div> <br>
-                <div class="row text-light">
-                    <label for="Author">
+            </div> <br>
+            <div class="row text-light">
+                <label for="Author">
                     Author : 
                 </label> {{form.author}}
-                </div> <br>
-                <div class="row text-light">
-                    <label for="Summary">
+            </div> <br>
+            <div class="row text-light">
+                <label for="Summary">
                     Book Summary : 
                 </label> {{form.summary}}
-                </div> <br><br>
-                <div class="row text-light">
-                    <label for="Image">
+            </div> <br><br>
+            <div class="row text-light">
+                <label for="Image">
                     Book Cover image* : 
                 </label> {{form.image}}
-                </div><br>
-                <div class="row text-light">
-                    <label for="File">
+            </div><br>
+            <div class="row text-light">
+                <label for="File">
                     Book File* : 
                 </label> {{form.file}}
-                </div>
-
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label"></label>
-                <div class="d-grid gap-2">
-                    <button type="submit" name="" id="" class="add-button">Add data</button>
-                </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <div class="d-grid gap-2">
+                <button type="submit" name="" id="" class="add-button">Add data</button>
             </div>
-        </form>
-    </div>
-    {% endif %}
+        </div>
+    </form>
+</div>
+
 </div>
 {% endblock %}

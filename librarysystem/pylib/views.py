@@ -1,4 +1,5 @@
 from audioop import reverse
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.core.files.storage import FileSystemStorage
@@ -34,18 +35,9 @@ def contactus(request):
 #adding new books
 
 def adddata(request):
-    submitted = False
     form = AddDataForm()  
-    if request.method =="POST":
-      
-        
-        # myfile =request.FILES["myfile"]
-        # fs = FileSystemStorage()
-        
-        # fs.save(myfile.name, myfile)
-        
+    if request.method =="POST":        
         form = AddDataForm(request.POST, request.FILES)
-
         if form.is_valid(): 
             data = Book()
             data.isbn = form.cleaned_data["isbn"]
@@ -56,11 +48,15 @@ def adddata(request):
             data.image = form.cleaned_data["image"]
             data.file = form.cleaned_data["file"]
             form.save()
-            submitted = True
-        return render(request,'pylib/adddata.html',{ "form":form,"submitted":submitted})
+            messages.success(request,("Your Book has been added"))
+            return redirect('books')
+        else:
+        
+            messages.error(request,("Check your Book Details"))
+            return render(request,'pylib/adddata.html',{"form":form })
     else:
-        submitted = False
-        return render(request,'pylib/adddata.html',{"form":form , "submitted" : submitted})
+        return render(request,'pylib/adddata.html',{"form":form })
+        
 
 
 

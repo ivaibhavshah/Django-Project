@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from dataclasses import fields
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django import forms
 from django.contrib.auth.models import User
 
@@ -8,8 +9,8 @@ class RegisterForm(UserCreationForm):
     email = forms.EmailField(label = "Email",widget=forms.TextInput(attrs={'class':'form-control'}))
     first_name = forms.CharField(label = "First name",widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(label = "Last name",widget=forms.TextInput(attrs={'class':'form-control'}))
-    password1 = forms.CharField(label = "Set Password",widget=forms.TextInput(attrs={'class':'form-control'}))
-    password2 = forms.CharField(label = "Confirm Password",widget=forms.TextInput(attrs={'class':'form-control'}))
+    password1 = forms.CharField(label = "Set Password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    password2 = forms.CharField(label = "Confirm Password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
     class Meta:
         model = User
         fields = ("username", "email","first_name","last_name" ,"password1","password2")
@@ -23,13 +24,21 @@ class RegisterForm(UserCreationForm):
         return user
 
 class EditProfileForm(UserChangeForm):
-    #<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value=""> {{form.username}}
-    email = forms.EmailField(label = "Email",widget=forms.TextInput(attrs=  {'class':'form-control','placeholder':'Username','aria-label':'Username','aria-describedby':'basic-addon1'}))
+    
+    username = forms.CharField(label = "Username",widget=forms.TextInput(attrs={'class':'form-control'}))
+    email = forms.EmailField(label = "Email",widget=forms.TextInput(attrs=  {'class':'form-control'}))
     first_name = forms.CharField(label = "First name",widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(label = "Last name",widget=forms.TextInput(attrs={'class':'form-control'}))
-
+    password = forms.CharField(label = "",widget=forms.HiddenInput(attrs={'class':'form-control',"value" : "no password set"}))
     class Meta:
         model = User
         fields = ("username", "email","first_name","last_name")
 
-   
+class ChangePasswordForm(PasswordChangeForm):
+    old_password = forms.CharField(label = "Old Password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    new_password1 = forms.CharField(label = "Enter New Password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    new_password2 = forms.CharField(label = "Confirm New Password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
+
+    class Meta:
+        model = User
+        fields = ("old_password","new_password1","new_password2")

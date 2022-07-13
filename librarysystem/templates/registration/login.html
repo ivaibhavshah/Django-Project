@@ -8,11 +8,8 @@
 
         {% csrf_token %}
 
-        <div >
-            <label for="username">Enter Your Username: </label> {{form.username}}
-        </div>
         <div>
-            <label for="password">Enter Password: </label><br> {{form.password}}
+            {{form.as_p}}
         </div><br>
         <div class="">
             <button type="submit" class="login-button">Login</button>

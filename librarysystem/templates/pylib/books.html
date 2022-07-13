@@ -1,4 +1,8 @@
-{% extends 'pylib/base.html' %} {% load static %} {% block title %} Homepage {% endblock %} {% block css %}{% static 'home/home.css' %}{% endblock %} {% block content %}
+{% extends 'pylib/base.html' %} 
+{% load static %}
+{% block title %} Homepage {% endblock %} 
+{% block css %}{% static 'home/home.css' %}{% endblock %}
+ {% block content %} {% if messages %} {% for message in messages %} {{message}} {% endfor %} {% endif %}
 <div class='body'>
     {% for book in books %}
     <div class="card">

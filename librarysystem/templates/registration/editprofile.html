@@ -8,22 +8,8 @@
         </div>
         <br>
         <h6 class="warning">Prefer not to change username & email add**</h6>
-        <div class="input-group mb-3">
 
-            <span class="input-group-text" id="basic-addon1">@</span> {{form.username}}
-
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Email</span> {{form.email}}
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">First Name</span> {{form.first_name}}
-        </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Last Name</span> {{form.last_name}}
-        </div>
-
+        {{form}}
         <a href="{% url 'changepass' %}" class="password mb-2"> Change Password</a>
         <button type="submit" class="update-button">Update Profile </button>
     </div>
