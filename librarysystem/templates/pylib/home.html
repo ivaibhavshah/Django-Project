@@ -1,4 +1,4 @@
-{% extends 'pylib/base.html' %} {% load static %} {% block title %}Hello User {% endblock %} {% block css %}{% static 'home/page.css' %}{% endblock %} {% block content %}
+{% extends 'pylib/base.html' %} {% load static %} {% block title %}Hello User {% endblock %} {% block css %}{% static 'home/Page.css' %}{% endblock %} {% block content %}
 <div class="main">
 
     <div class="heading ">
@@ -15,7 +15,7 @@
 
 
     <div class="button">
-        <a name="row" id="" class="btn btn-success" href="{%url 'books' %}" role="button">Book in library</a>
+        <a name="row" id="" class=" mb-2" href="{%url 'books' %}"><button class="button-book">Book in library</button></a>
     </div>
 </div>
 

@@ -1,0 +1,56 @@
+.navigation{
+    border-bottom: 0.5px solid black;
+}
+
+.footer-border{
+    border-top: 1px solid black;
+    box-shadow: 2px 3px 5px 2px #232323;
+}
+
+.search-button{
+    background-color: #ffffff;
+    border: 3px solid #00bfff;
+    border-color: #4b8a9f;
+    border-radius: 5px;
+}
+
+.search-button:hover{
+    border-color: #4b8a9f;
+    background-color: #4b8a9f;
+    color:white;
+    transition: 0.3s;
+}
+
+.login-button{
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.login-button:hover{
+    background-color: #5fa36b;
+    border: 3px solid #5fa36b;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.signup-button{
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.signup-button:hover{
+    background-color: #5858aa;
+    border: 3px solid #5858aa;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+
+
+
+

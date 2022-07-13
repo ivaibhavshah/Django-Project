@@ -3,25 +3,38 @@
     display: block;
     text-align: center;
     margin-top: 1%;
-    background-color: beige;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
+    /* background-color: beige; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .button {
     align-items: center;
-    margin-top: 2%;
     display: flex;
     justify-content: center;
-    margin-bottom: 2%;
+}
+
+.button-book{
+    background-color: #ffffff;
+    border: 3px solid #00bfff;
+    border-color: #4b8a9f;
+    border-radius: 5px;
+    padding: 4px 8px;
+}
+
+.button-book:hover{
+    border-color: #4b8a9f;
+    background-color: #4b8a9f;
+    color:white;
+    transition: 0.3s;
 }
 
 .main {
-    margin-top: 2%;
+    margin-top: 10rem;
+    /* margin-bottom: 15rem; */
     margin-left: 30%;
     margin-right: 30%;
-    border-radius: 2%;
-    border-style: double;
-    border: 2%;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 2px #232323;
     margin-bottom: 1%;
 }
 
