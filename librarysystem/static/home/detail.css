@@ -11,6 +11,25 @@ img {
     padding-left: 1rem;
 }
 
-main {
-    display: flex;
+.download-button, .homepage-button{
+    background-color: #ffffff;
+    border: 3px solid #00bfff;
+    border-color: #4b8a9f;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.download-button:hover{
+    background-color: #43cd88;
+    border: 3px solid #43cd88;
+}
+
+.homepage-button:hover{
+    border-color: #4b8a9f;
+    background-color: #4b8a9f;
+}
+
+.download-button:hover, .homepage-button:hover{
+    color: #ffffff;
+    transition: 0.3s;
 }
