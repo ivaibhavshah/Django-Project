@@ -3,18 +3,13 @@
     width: 25%;
     height: 50%;
     border: solid;
-    border-radius: 2%;
     vertical-align: middle;
     margin-top: 15%;
-    padding: 20px;
-    background-color: white;
-    /* margin: 50px; */
-    /* padding-bottom: 50px; */
 }
 
 .header {
     text-align: center;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -24,12 +19,42 @@ body {
     justify-content: center;
 }
 
+.login-button{
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.login-button:hover{
+    background-color: #5fa36b;
+    border: 3px solid #5fa36b;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.signup-button{
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.signup-button:hover{
+    background-color: #5858aa;
+    border: 3px solid #5858aa;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
 .signup {
     display: flex;
     justify-content: flex-end;
 }
 
-.text {
-    margin-top: 2%;
-    vertical-align: middle;
+.new-user{
+    float: right;
+    margin: auto;
+    color: #4b8a9f;
 }

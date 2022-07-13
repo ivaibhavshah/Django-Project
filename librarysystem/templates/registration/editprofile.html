@@ -7,7 +7,7 @@
             <h3 class="heading">Edit Profile Page ..</h3>
         </div>
         <br>
-        <h6>Prefer not to change username & email add**</h6>
+        <h6 class="warning">Prefer not to change username & email add**</h6>
         <div class="input-group mb-3">
 
             <span class="input-group-text" id="basic-addon1">@</span> {{form.username}}
@@ -24,9 +24,8 @@
             <span class="input-group-text" id="basic-addon1">Last Name</span> {{form.last_name}}
         </div>
 
-        <a href="{% url 'changepass' %}">
-            <button type="button" class="submit btn btn-gray"> Change Password </button></a>
-        <button type="submit" class="submit btn btn-dark">Update Profile </button>
+        <a href="{% url 'changepass' %}" class="password mb-2"> Change Password</a>
+        <button type="submit" class="update-button">Update Profile </button>
 
     </div>
 

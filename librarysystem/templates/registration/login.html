@@ -1,24 +1,26 @@
  {% extends 'registration/acc_base.html' %} {% load crispy_forms_tags %} {% load static%} {% block css %}{% static 'home/user.css'%}{% endblock %} {% block content %}
 
-<div class="box">
+<div class="box shadow p-3 mb-5 bg-white rounded">
     <header class="header">
         <h5>Login, Enter your credentials here!!</h5>
     </header>
-    <form action="" method="post">
+    <form action="" method="post" class="form-control">
 
         {% csrf_token %}
 
-        <div class="">
-            <label for="username">Enter Your Username : </label> {{form.username}}
+        <div >
+            <label for="username">Enter Your Username: </label> {{form.username}}
         </div>
-        <div class="">
-            <label for="password">Enter Password : </label><br> {{form.password}}
+        <div>
+            <label for="password">Enter Password: </label><br> {{form.password}}
         </div><br>
-        <div><button type="submit" class="btn btn-dark">Login</button></div>
-        <div class="signup">
-            <div class="text">New User : -></div>
-            <a href="{% url 'signup'%}">
-                <button type="button" class="btn btn-black">Signup</button></a>
+        <div class="">
+            <button type="submit" class="login-button">Login</button>
+            <p class="new-user">New user
+                <a href="{% url 'signup'%}">
+                    <button type="button" class="signup-button">Signup</button>
+                </a>
+            </p>
         </div>
     </form>
 </div>

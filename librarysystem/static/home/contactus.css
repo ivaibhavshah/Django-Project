@@ -18,7 +18,7 @@
 .call {
     width: auto;
     margin: 0.5%;
-    background-color: wheat;
+    background-color: #6c757d;
     padding: 8rem;
     border-radius: 2%;
 }
@@ -31,7 +31,7 @@
     .mail,
     .call {
         margin: 1%;
-        background-color: wheat;
+        background-color: #6c757d;
         border-radius: 2%;
     }
     .main {

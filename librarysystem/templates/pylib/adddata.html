@@ -8,38 +8,38 @@
 
             {% csrf_token %}
             <div>
-                <div class="heading">
+                <div class="heading text-light">
                     <h3>Enter Your Book details</h3>
                 </div>
 
-                <div class="row">
+                <div class="row text-light">
                     <label for="ISBN">
                     Book ISBN* :
                 </label> {{form.isbn}}
 
                 </div>
                 <br>
-                <div class="row">
+                <div class="row text-light">
                     <label for="Name">
                     Book Name* : 
                 </label> {{form.name}}
                 </div> <br>
-                <div class="row">
+                <div class="row text-light">
                     <label for="Author">
                     Author : 
                 </label> {{form.author}}
                 </div> <br>
-                <div class="row">
+                <div class="row text-light">
                     <label for="Summary">
                     Book Summary : 
                 </label> {{form.summary}}
                 </div> <br><br>
-                <div class="row">
+                <div class="row text-light">
                     <label for="Image">
                     Book Cover image* : 
                 </label> {{form.image}}
-                </div><br> <br>
-                <div class="row">
+                </div><br>
+                <div class="row text-light">
                     <label for="File">
                     Book File* : 
                 </label> {{form.file}}
@@ -50,7 +50,7 @@
             <div class="mb-3">
                 <label for="" class="form-label"></label>
                 <div class="d-grid gap-2">
-                    <button type="submit" name="" id="" class="btn btn-dark">Add data</button>
+                    <button type="submit" name="" id="" class="add-button">Add data</button>
                 </div>
             </div>
         </form>

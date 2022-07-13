@@ -1,29 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
 .main {
-    margin-top: 1%;
-    margin-bottom: 2%;
+    margin-top: 5rem;
     margin-right: 30%;
     margin-left: 30%;
     border: inset 1px;
     border-radius: 02%;
     border-spacing: 1px;
-    background-color: rgba(102, 106, 104, 0.244);
+    background-color: #6c757d;
     padding: 0%;
     display: grid;
     justify-content: center;
+    box-shadow: 2px 3px 5px 2px #545454;
+
 }
 
 .heading {
     text-align: center;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: oblique;
     margin-bottom: 10%;
     padding-top: 1%;
     margin-top: 10%;
+    color: white;
 }
 
-.submit {
-    margin-bottom: 5%;
+.warning{
+    color: #d6d6d6;
+}
+
+.password{
+    text-decoration: none;
+    color: white;
+}
+
+.password:hover{
+    color: orange;
+}
+
+.update-button{
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.update-button:hover{
+    background-color: #6c757d;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    transition: 0.3s;
 }
 
 input {
