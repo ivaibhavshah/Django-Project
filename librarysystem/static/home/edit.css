@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
 .main {
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-right: 28%;
     margin-left: 28%;
     border: inset 1px;
@@ -34,6 +34,26 @@
 
 .password:hover {
     color: orange;
+}
+
+.signup-button, .login-button{
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.signup-button:hover, .login-button:hover{
+    background-color: #6c757d;
+    border: 3px solid white;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.login-button:hover{
+    background-color: #4b8a9f;
 }
 
 .update-button {

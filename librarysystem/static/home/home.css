@@ -1,3 +1,32 @@
+.read{
+    display: grid;
+    width: 100%;
+}
+
+.moreinfo-button, .download-button{
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 3px solid #4b8a9f;
+    padding: 0.2rem 8rem;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.moreinfo-button:hover, .download-button:hover{
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.download-button:hover{
+    background-color: #43cd88;
+    border: 3px solid #43cd88;
+}
+
+.moreinfo-button:hover{
+    border-color: #4b8a9f;
+    background-color: #4b8a9f;
+}
+
 @media only screen and (min-width: 769px) {
     .card {
         height: 25%;
@@ -19,11 +48,6 @@ img {
     width: 30%;
     height: 45%;
     align-items: center;
-}
-
-.read {
-    display: contents;
-    /* justify-content: space-between; */
 }
 
 @media only screen and (max-width: 768px) {

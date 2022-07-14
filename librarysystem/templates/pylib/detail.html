@@ -8,24 +8,20 @@
             <p><small>{{book.summary}}</small></p>
         </div>
         <!-- <p>Remaining Quantity : {{book.quantity}}</p> -->
-        <div>
+        <center>
             <a href="{% url 'download' book.isbn %}">
-                <center>
-                    <button class = "download-button mt-5 col-3 align ">
-                        Download PDF
-                    </button>
-                </center>
+                <button class = "download-button mt-5 col-3 align ">
+                    Download PDF
+                </button>
             </a>
-        </div>
-        <div>
+        </center>
+        <center>
             <a href="{% url 'books' %}">
-                <center>
-                    <button class = "homepage-button mt-3 col-3 align ">
-                        Back To Homepage
-                    </button>
-                </center>
+                <button class = "homepage-button mt-3 col-3 align ">
+                    Back To Homepage
+                </button>
             </a> 
-        </div>
+        </center>
     </span>
 </div>
 {% endblock %}

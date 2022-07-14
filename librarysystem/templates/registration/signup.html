@@ -12,10 +12,10 @@
         {{form.as_p}}
 
         <br>
-        <button type="submit" class="btn btn-primary">SignUp</button><br>
+        <button type="submit" class="signup-button">SignUp</button><br>
         <div class="d-flex ">
-            <p> Already Have an account? </p>
+            <p class="text-light"> Already Have an account? </p>
             <a href="{% url 'login' %}">
-                <button type="button" class="btn btn-primary ms-3">Login</button></a>
+                <button type="button" class="login-button ms-3">Login</button></a>
         </div><br>
 </form> {% endblock content %}

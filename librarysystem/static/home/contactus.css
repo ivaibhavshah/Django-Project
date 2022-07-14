@@ -1,6 +1,5 @@
 .title {
     margin: 2rem;
-    background-color: grey;
     padding: 2rem;
     font-style: italic;
 }
@@ -18,7 +17,6 @@
 .call {
     width: auto;
     margin: 0.5%;
-    background-color: #6c757d;
     padding: 8rem;
     border-radius: 2%;
 }

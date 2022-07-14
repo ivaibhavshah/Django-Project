@@ -18,8 +18,13 @@
             <p class="card-text">Quantity : {{book.quantity}}</p> {% endcomment %}
         </div>
 
-        <div class='read'><button class="btn btn-dark"><a class="link-light" href = "{% url 'detail' book.isbn %}"> More Info </a>
-          <button  class="btn btn-dark mt-1"><a class="link-light" href = "{%url 'download' book.isbn %}"> Download PDF </a> 
+        <div class="read">
+            <a class="" href = "{% url 'detail' book.isbn %}">
+              <button type="button" class="moreinfo-button"> More Info </button>
+            </a>
+            <a class="" href = "{%url 'download' book.isbn %}">
+              <button type="button" class="download-button mt-2"> Download PDF </button>
+            </a> 
         </div>
         
       </div>
